@@ -5,16 +5,16 @@ import ImageSlider from './ImageSlider';
 import Movies from './Movies';
 import { useEffect } from 'react';
 import Viewers from './Viewers';
+import Data from '../Data';
+import { useDispatch } from 'react-redux';
+import { setMovies } from '../features/movies/movieSlice';
 const Home = () => {
- 
-  // useEffect(()=>{
-  //   db.collection("movies").onSnapshot((snapshot)=>{
-  //      let tempMovies=snapshot.doc.map((doc)=>{
-  //       return {id:doc.id, ...doc.data()}
-  //      })
-  //      console.log(tempMovies);
-  //   })
-  // },[])
+  // console.log(Data);
+   const dispatch=useDispatch();
+
+   useEffect(()=>{
+    dispatch(setMovies(Data));
+   },[])
 
   return (
      <Conatiner>
