@@ -5,25 +5,25 @@ const Header = () => {
 
   return (
     <Nav>
-       <Logo src="./images/logo.svg" />
+       <Logo src="/images/logo.svg" />
        <NavMenu>
-         <a><img src="./images/home-icon.svg" alt="" />
+         <a><img src="/images/home-icon.svg" alt="" />
          <span>Home</span>
          </a>
-         <a><img src="./images/search-icon.svg" alt="" />
+         <a><img src="/images/search-icon.svg" alt="" />
          <span>Search</span>
          </a>
-         <a><img src="./images/watchlist-icon.svg" alt="" />
+         <a><img src="/images/watchlist-icon.svg" alt="" />
          <span>watchlist</span>
          </a>
-         <a><img src="./images/movie-icon.svg" alt="" />
+         <a><img src="/images/movie-icon.svg" alt="" />
          <span>orignals</span>
          </a>
-         <a><img src="./images/series-icon.svg" alt="" />
+         <a><img src="/images/series-icon.svg" alt="" />
          <span>series</span>
          </a>
        </NavMenu>
-       <UserProfile src='./images/my profile.jpeg' />
+       <UserProfile src='/images/my profile.jpeg' />
     </Nav>
   )
 }

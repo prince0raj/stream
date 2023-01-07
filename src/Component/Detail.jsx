@@ -1,29 +1,36 @@
 import React from 'react'
 import styled from 'styled-components';
-
+import poster from '../accests/movies/deadpool-2-banner.jpeg'
+import logo from '../accests/movies/deadpool-logo.png'
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import Data from '../Data';
 const Detail = () => {
+  const {id} =useParams();
+  console.log(id);
   return (
     <Container>
         <Background>
-            <img src="./images/money.jpg" alt="" />
+            <img src={Data[id-1].poster} alt="" />
         </Background>
-        <ImageTittle>
-            <img src="" alt="" />
-        </ImageTittle>
+        {/* <ImageTittle>
+            <img src={logo} alt="" />
+        </ImageTittle> */}
+        <Butbox>
         <Control>
             <PlayButton>
-               <img src="./images/play-icon-black.png" alt="" />
+               <img src="/images/play-icon-black.png" alt="" />
                <span>PLAY</span>
             </PlayButton>
             <Trailler>
-            <img src="./images/play-icon-white.png" alt="" />
+            <img src="/images/play-icon-white.png" alt="" />
                <span>Trailer</span>
             </Trailler>
             <Add>
              <span>+</span>
             </Add>
             <Group>
-               <img src="./images/group-icon.png" alt="" />
+               <img src="/images/group-icon.png" alt="" />
             </Group>
         </Control>
         <Subtittle>
@@ -32,6 +39,7 @@ const Detail = () => {
         <Desc>
              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia? Rerum maiores velit ratione ipsa nesciunt ipsum aperiam aliquid porro error voluptatum. Eaque, consequuntur!
         </Desc>
+        </Butbox>
 
     </Container>
   )
@@ -39,6 +47,9 @@ const Detail = () => {
 
 export default Detail;
 
+const Butbox=styled.div`
+transform: translateY(90%);
+`
 const Container=styled.div`
 min-height: calc(100vh - 70px);
 padding:0 calc(3.5vw + 5px);
@@ -46,7 +57,7 @@ position:relative;
 `
 const Background=styled.div`
    position:fixed;
-   top:0;
+   top:60px;
    left:0;
    right:0;
    bottom:0;
@@ -55,7 +66,7 @@ const Background=styled.div`
    img{
     width:100%;
     height:100%;
-    object-fit:cover;
+    // object-fit:cover;
    }
 `
 const ImageTittle=styled.div`
@@ -77,7 +88,7 @@ const Control=styled.div`
 `
 const PlayButton=styled.button`
   border-radius:4px;
-  font-size:15px;
+  font-size:13px;
   padding:0px 24px;
   display:flex;
   align-items:center;
@@ -125,7 +136,7 @@ margin-top:26px;
 `
 const Desc=styled.p`
 line-height:1.4;
-font-size:20px;
+font-size:16px;
 margin-top:16px;
 color:rgb(249, 249, 249);
 max-width:760px;

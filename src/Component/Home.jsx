@@ -35,7 +35,7 @@ position:relative;
 overflow-x: hidden;
   &:before{
     content:"";
-    background:url('./images/home-background.png') center center / cover no-repeat fixed;
+    background:url('/images/home-background.png') center center / cover no-repeat fixed;
     position:absolute;
     top:0;
     bottom:0;
