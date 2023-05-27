@@ -5,16 +5,16 @@ import ImageSlider from './ImageSlider';
 import Movies from './Movies';
 import { useEffect } from 'react';
 import Viewers from './Viewers';
+import Data from '../Data';
+import { useDispatch } from 'react-redux';
+import { setMovies } from '../features/movies/movieSlice';
 const Home = () => {
- 
-  // useEffect(()=>{
-  //   db.collection("movies").onSnapshot((snapshot)=>{
-  //      let tempMovies=snapshot.doc.map((doc)=>{
-  //       return {id:doc.id, ...doc.data()}
-  //      })
-  //      console.log(tempMovies);
-  //   })
-  // },[])
+  // console.log(Data);
+   const dispatch=useDispatch();
+
+   useEffect(()=>{
+    dispatch(setMovies(Data));
+   },[])
 
   return (
      <Conatiner>
@@ -35,7 +35,7 @@ position:relative;
 overflow-x: hidden;
   &:before{
     content:"";
-    background:url('./images/home-background.png') center center / cover no-repeat fixed;
+    background:url('/images/home-background.png') center center / cover no-repeat fixed;
     position:absolute;
     top:0;
     bottom:0;

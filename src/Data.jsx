@@ -35,9 +35,6 @@ const Data=[
     {id:'15',poster:shang_chi},
     {id:'16',poster:skyfall},
     {id:'17',poster:venom},
-    {id:'17',poster:venom},
     {id:'18',poster:Vikram},
-    {id:'18',poster:Vikram},
-
 ]
 export default Data;

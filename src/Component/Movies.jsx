@@ -1,16 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
-import Data from '../Data'
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { selectMovies } from '../features/movies/movieSlice'
 const Movies = () => {
+  const movies=useSelector(selectMovies);
+  console.log(movies);
   return (
     <Container>
         <h4>
             Recommended for You
         </h4>
         <Content>
-        {Data.map((data)=>(
+        {movies.map((data)=>(
         <Wrap key={data.id}>
+          <Link to={`/detail/${data.id}`}>
             <img src={data.poster} alt="" />
+            </Link>
         </Wrap>
         ))}
         </Content>
